@@ -1,3 +1,11 @@
+"""
+Settings
+Ari Papke
+determines the attributes for various objects
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import pygame
 
 class Settings:
@@ -16,4 +24,4 @@ class Settings:
         self.bullet_color = (240, 60, 60)
         self.bullet_image = pygame.image.load("images/bullet.png")
 
-        self.bullets_allowed = 5
+        self.bullets_allowed = 20

@@ -1,3 +1,11 @@
+"""
+Alien Invasion
+Ari Papke
+main game file
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import sys
 
 import pygame
