@@ -1,9 +1,12 @@
+import pygame
+
 class Settings:
 
     def __init__(self):
         self.screen_width = 1200
         self.screen_height = 800
-        self.bg_color = (69, 32, 136)
+        self.bg_color = (230, 230, 230)
+        self.bg_image = pygame.image.load("images/space.png")
         
         self.ship_speed = 8
 

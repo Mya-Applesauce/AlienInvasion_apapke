@@ -75,7 +75,10 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
 
     def _update_screen(self):
-        self.screen.fill(self.settings.bg_color)
+        if self.settings.bg_image == None:
+            self.screen.fill(self.settings.bg_color)
+        else:
+            self.screen.blit(self.settings.bg_image)
         self.ship.blitme()
 
         for bullet in self.bullets.sprites():
