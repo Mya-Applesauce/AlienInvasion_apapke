@@ -1,0 +1,2 @@
+image/ship.bmp: https://www.pixilart.com/art/spaceship-sr5z0fe130133caws3
+art created by me.
