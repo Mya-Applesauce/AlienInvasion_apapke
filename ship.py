@@ -1,8 +1,10 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship(Sprite):
 
     def __init__(self, alien_game):
+        super().__init__()
         self.screen = alien_game.screen
         self.settings = alien_game.settings
         self.screen_rect = alien_game.screen.get_rect()
@@ -27,3 +29,7 @@ class Ship:
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
