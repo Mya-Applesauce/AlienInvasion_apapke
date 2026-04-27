@@ -1,9 +1,20 @@
+"""
+Settings
+Ari Papke
+determines the attributes for various objects
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
+import pygame
+
 class Settings:
 
     def __init__(self):
         self.screen_width = 1200
         self.screen_height = 800
-        self.bg_color = (69, 32, 136)
+        self.bg_color = (230, 230, 230)
+        self.bg_image = pygame.image.load("images/space.png")
         
         self.ship_speed = 8
 
@@ -11,4 +22,6 @@ class Settings:
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (240, 60, 60)
-        self.bullets_allowed = 5
+        self.bullet_image = pygame.image.load("images/bullet.png")
+
+        self.bullets_allowed = 20

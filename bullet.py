@@ -1,3 +1,11 @@
+"""
+Bullet
+Ari Papke
+code for the bullets
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import pygame
 from pygame.sprite import Sprite
 
@@ -6,10 +14,12 @@ class Bullet(Sprite):
         super().__init__()
         self.screen = alien_game.screen
         self.settings = alien_game.settings
-        self.color = self.settings.bullet_color
+        self.screen_rect = alien_game.screen.get_rect()
 
-        self.rect = pygame.Rect(0, 0, self.settings.bullet_width,
-            self.settings.bullet_height)
+        self.color = self.settings.bullet_color
+        self.image = self.settings.bullet_image
+
+        self.rect = self.image.get_rect()
         self.rect.midtop = alien_game.ship.rect.midtop
 
         self.y = float(self.rect.y)
@@ -19,4 +29,4 @@ class Bullet(Sprite):
         self.rect.y = self.y
 
     def draw_bullet(self):
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        self.screen.blit(self.image, self.rect)
