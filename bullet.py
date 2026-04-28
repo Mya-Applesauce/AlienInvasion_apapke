@@ -10,7 +10,10 @@ import pygame
 from pygame.sprite import Sprite
 
 class Bullet(Sprite):
+    """A class to manage bullets fired from the ship."""
+
     def __init__(self, alien_game):
+        """Create a bullet object at the ship's current position."""
         super().__init__()
         self.screen = alien_game.screen
         self.settings = alien_game.settings
@@ -24,8 +27,10 @@ class Bullet(Sprite):
         self.y = float(self.rect.y)
 
     def update(self):
+        """Move the bullet up the screen."""
         self.y -= self.settings.bullet_speed
         self.rect.y = self.y
 
     def draw_bullet(self):
+        """Draw the bullet to the screen."""
         self.screen.blit(self.image, self.rect)

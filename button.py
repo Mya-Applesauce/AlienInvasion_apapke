@@ -9,7 +9,10 @@ starter code came from Python Crash Course, 3rd Edition by Eric Matthes
 import pygame
 
 class Button:
+    """A class to build buttons for the game."""
+
     def __init__(self, alien_game):
+        """Initialize button attributes."""
         self.screen = alien_game.screen
         self.screen_rect = self.screen.get_rect()
 
@@ -19,4 +22,5 @@ class Button:
         self.rect.center = self.screen_rect.center
 
     def draw_button(self):
+        """Draw the button to the screen."""
         self.screen.blit(self.image, self.rect)
