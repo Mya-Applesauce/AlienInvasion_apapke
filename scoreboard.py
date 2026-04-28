@@ -24,6 +24,7 @@ class Scoreboard:
 
         self.text_color = (255, 255, 255)
         self.font = pygame.font.Font("fonts/lunchds.ttf", 48)
+        #the font "Lunchtime Doubly So" was created by codeman38: http://www.zone38.net/font/#lunchtime
 
         self.prep_score()
         self.prep_high_score()
