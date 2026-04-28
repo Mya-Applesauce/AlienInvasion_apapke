@@ -49,20 +49,13 @@ class AlienInvasion:
 
         self.game_active = False
 
-    def _music(self):
-        mixer.init()
-
-        self.bg_music = mixer.music.load("music/invitation.mp3")
-        #song created by me.
-
-
     def run_game(self):
         """Start the main loop for the game."""
         while True:
             self._check_events()
             self._update_screen()
             self.clock.tick(60)
-            self.bg_music.mixer.music.play()
+            self._music()
             
             if self.game_active:
                 self.ship.update()
@@ -110,6 +103,7 @@ class AlienInvasion:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
+            self.laser_noise()
             
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -117,6 +111,23 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+
+    def _music(self):
+        mixer.init()
+        pygame.mixer.music.load("music/nostalgia.mp3")
+        #song created by me.
+        pygame.mixer.music.set_volume(8)
+        pygame.mixer.music.play(-1)
+
+    def impact_noise(self):
+        impact = pygame.mixer.Sound("music/sounds/firecracker.mp3")
+        #sound created by unfa: https://freesound.org/people/unfa/sounds/609588/
+        impact.play()
+
+    def laser_noise(self):
+        laser = pygame.mixer.Sound("music/sounds/retro-laser-zap.mp3")
+        #sound created by Funky_Audio: https://freesound.org/people/Funky_Audio/sounds/729389/
+        laser.play()
 
     def _create_hud(self):
         """Put the HUD on the screen."""
@@ -203,6 +214,7 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
+            self.impact_noise()
 
         if not self.aliens:
             self.bullets.empty()
@@ -217,6 +229,8 @@ class AlienInvasion:
         if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
             self.sb.prep_ships()
+
+            self.impact_noise()
 
             self.bullets.empty()
             self.aliens.empty()
