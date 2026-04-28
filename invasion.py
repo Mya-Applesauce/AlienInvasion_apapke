@@ -113,6 +113,7 @@ class AlienInvasion:
             self.ship.moving_left = False
 
     def _music(self):
+        """The background music."""
         mixer.init()
         pygame.mixer.music.load("music/nostalgia.mp3")
         #song created by me.
@@ -120,11 +121,13 @@ class AlienInvasion:
         pygame.mixer.music.play(-1)
 
     def impact_noise(self):
+        """Sound for when ships are damaged."""
         impact = pygame.mixer.Sound("music/sounds/firecracker.mp3")
         #sound created by unfa: https://freesound.org/people/unfa/sounds/609588/
         impact.play()
 
     def laser_noise(self):
+        """Sound for when the gun fires."""
         laser = pygame.mixer.Sound("music/sounds/retro-laser-zap.mp3")
         #sound created by Funky_Audio: https://freesound.org/people/Funky_Audio/sounds/729389/
         laser.play()
