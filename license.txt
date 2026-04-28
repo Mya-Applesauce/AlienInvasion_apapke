@@ -1,2 +1,20 @@
-image/ship.bmp: https://www.pixilart.com/art/spaceship-sr5z0fe130133caws3
-art created by me.
+image/spaceship2.png: https://www.pixilart.com/art/spaceship-sr5z0fe130133caws3
+image/ufo.png: https://www.pixilart.com/art/ufo-sr5z3c040da62baws3
+image/bullet.png: https://www.pixilart.com/art/bullets-sr5zde1d33a7b7aws3
+image/space.png: https://www.pixilart.com/art/background-sr5z35dc75cb84aws3
+image/playbutton.png: https://www.pixilart.com/art/play-button-sr5zf0ddde602eaws3
+image/hud3.png: https://www.pixilart.com/art/hud-cfr20ab0a13382aws3
+all art created by me.
+
+music/invitation.mp3
+music/invitation2.mp3
+music/nostalgia.mp3
+all music also created by me
+
+music/sounds/firecracker.mp3: https://freesound.org/people/unfa/sounds/609588/
+sound created by unfa
+music/sounds/retro-laser-zap.mp3: https://freesound.org/people/Funky_Audio/sounds/729389/
+sound created by Funky_Audio
+
+font/lunchds.ttf: http://www.zone38.net/font/#lunchtime
+font created by codeman38

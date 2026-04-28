@@ -10,6 +10,7 @@ import sys
 from time import sleep
 
 import pygame
+from pygame import mixer
 
 from settings import Settings
 from ship import Ship
@@ -36,6 +37,7 @@ class AlienInvasion:
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
         self._create_hud()
+        self._music()
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
@@ -47,13 +49,20 @@ class AlienInvasion:
 
         self.game_active = False
 
+    def _music(self):
+        mixer.init()
+
+        self.bg_music = mixer.music.load("music/invitation.mp3")
+        #song created by me.
+
+
     def run_game(self):
         """Start the main loop for the game."""
         while True:
             self._check_events()
             self._update_screen()
             self.clock.tick(60)
-
+            self.bg_music.mixer.music.play()
             
             if self.game_active:
                 self.ship.update()
@@ -247,6 +256,7 @@ class AlienInvasion:
             self.play_button.draw_button()
 
         pygame.display.flip()
+
 
 
 if __name__ == '__main__':

@@ -20,6 +20,7 @@ class Ship(Sprite):
         self.screen_rect = alien_game.screen.get_rect()
 
         self.image = pygame.image.load("images/spaceship2.png")
+        #art created by me: https://www.pixilart.com/art/spaceship-sr5z0fe130133caws3
         self.rect = self.image.get_rect()
 
         self.rect.midbottom = self.screen_rect.midbottom

@@ -19,6 +19,7 @@ class Alien(Sprite):
         self.settings = alien_game.settings
 
         self.image = pygame.image.load("images/ufo.png")
+        #art created by me: https://www.pixilart.com/art/ufo-sr5z3c040da62baws3
         self.rect = self.image.get_rect()
 
         self.rect.x = self.rect.width

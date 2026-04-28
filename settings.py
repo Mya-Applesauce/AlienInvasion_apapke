@@ -17,15 +17,21 @@ class Settings:
         self.screen_height = 800
         self.bg_color = (69, 32, 136)
         self.bg_image = pygame.image.load("images/space.png")
+        #art created by me: https://www.pixilart.com/art/background-sr5z35dc75cb84aws3
         self.hud_image = pygame.image.load("images/hud3.png")
+        #art created by me: https://www.pixilart.com/art/hud-cfr20ab0a13382aws3
 
-        self.bg_music = pygame.mixer.music.load("music/invitation.mp3")
+        self.impact_noise = pygame.mixer.music.load("music/sounds/firecracker.mp3")
+        #sound created by unfa: https://freesound.org/people/unfa/sounds/609588/
+        self.laser_noise = pygame.mixer.music.load("music/sounds/retro-laser-zap.mp3")
+        #sound created by Funky_Audio: https://freesound.org/people/Funky_Audio/sounds/729389/
         
         self.ship_limit = 3
 
         self.fleet_drop_speed = 10.0
 
         self.bullet_image = pygame.image.load("images/bullet.png")
+        #art created by me: https://www.pixilart.com/art/bullets-sr5zde1d33a7b7aws3
         self.bullets_allowed = 20
 
         self.speedup_scale = 1.3
