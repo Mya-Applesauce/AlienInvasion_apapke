@@ -1,3 +1,11 @@
+"""
+Alien Invasion
+Ari Papke
+main game file
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import sys
 from time import sleep
 
@@ -105,14 +113,24 @@ class AlienInvasion:
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
 
-        current_x, current_y = alien_width, alien_height
-        while current_y < (self.settings.screen_height - 3 * alien_height):
-            while current_x < (self.settings.screen_width - 2 * (alien_width / 2)):
-                self._create_alien(current_x, current_y)
-                current_x += 2 * (alien_width / 2)
+        #current_x, current_y = alien_width, alien_height
+        #while current_y < (self.settings.screen_height - 3 * alien_height):
+            #while current_x < (self.settings.screen_width - 2 * (alien_width / 2)):
+                #self._create_alien(current_x, current_y)
+                #current_x += 2 * (alien_width / 2)
             
-            current_x = (alien_width / 2)
-            current_y += 2 * (alien_height / 2)
+            #current_x = (alien_width / 2)
+            #current_y += 2 * (alien_height / 2)
+        def alien_should_occupy(position_x, position_y):
+            coord_y = position_y / alien_height
+            coord_x = position_x / alien_width
+            if coord_y <= (-coord_x + 8) and coord_y <= coord_x:
+                return True
+
+        for position_y in range(alien_height, self.settings.screen_height - 3 * alien_height, alien_height):
+            for position_x in range(alien_width, self.settings.screen_width - alien_width, alien_width):
+                if alien_should_occupy(position_x, position_y):
+                    self._create_alien(position_x, position_y)
 
     def _create_alien(self, x_position, y_position):
         new_alien = Alien(self)
@@ -194,6 +212,7 @@ class AlienInvasion:
             self.screen.fill(self.settings.bg_color)
         else:
             self.screen.blit(self.settings.bg_image)
+            self._create_hud()
             
         self.ship.blitme()
 
