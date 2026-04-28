@@ -1,3 +1,11 @@
+"""
+Settings
+Ari Papke
+determines the attributes for various objects
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import pygame
 
 class Settings:

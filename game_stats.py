@@ -1,3 +1,11 @@
+"""
+game stats
+Ari Papke
+stores stats
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 class GameStats:
     def __init__(self, alien_game):
         self.settings = alien_game.settings

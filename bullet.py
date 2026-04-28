@@ -1,3 +1,11 @@
+"""
+Bullet
+Ari Papke
+code for the bullets
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import pygame
 from pygame.sprite import Sprite
 

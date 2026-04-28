@@ -1,3 +1,11 @@
+"""
+scoreboard
+Ari Papke
+displaying the score
+starter code came from Python Crash Course, 3rd Edition by Eric Matthes
+04/19/26
+"""
+
 import pygame.font
 from pygame.sprite import Group
 
@@ -49,7 +57,7 @@ class Scoreboard:
 
         self.level_rect = self.level_image.get_rect()
         self.level_rect.right = self.score_rect.right
-        self.level_rect.top = self.score_rect.bottom + 10
+        self.level_rect.top = self.score_rect.bottom + 30
 
     def prep_ships(self):
         self.ships = Group()
