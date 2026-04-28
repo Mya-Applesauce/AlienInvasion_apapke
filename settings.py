@@ -7,6 +7,9 @@ class Settings:
         self.screen_height = 800
         self.bg_color = (69, 32, 136)
         self.bg_image = pygame.image.load("images/space.png")
+        self.hud_image = pygame.image.load("images/hud3.png")
+
+        self.bg_music = pygame.mixer.music.load("music/invitation.mp3")
         
         self.ship_limit = 3
 

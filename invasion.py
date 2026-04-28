@@ -24,6 +24,7 @@ class AlienInvasion:
 
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
+        self._create_hud()
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
@@ -40,6 +41,7 @@ class AlienInvasion:
             self._check_events()
             self._update_screen()
             self.clock.tick(60)
+
             
             if self.game_active:
                 self.ship.update()
@@ -90,6 +92,9 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+
+    def _create_hud(self):
+        self.screen.blit(self.settings.hud_image)
 
     def _fire_bullet(self):
         if len(self.bullets) < self.settings.bullets_allowed:
@@ -189,6 +194,7 @@ class AlienInvasion:
             self.screen.fill(self.settings.bg_color)
         else:
             self.screen.blit(self.settings.bg_image)
+            
         self.ship.blitme()
 
         for bullet in self.bullets.sprites():
