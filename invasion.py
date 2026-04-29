@@ -37,7 +37,7 @@ class AlienInvasion:
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
         self._create_hud()
-        self._music()
+        #self._music()
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
@@ -55,7 +55,7 @@ class AlienInvasion:
             self._check_events()
             self._update_screen()
             self.clock.tick(60)
-            self._music()
+            #self._music()
             
             if self.game_active:
                 self.ship.update()
@@ -112,13 +112,13 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
 
-    def _music(self):
-        """The background music."""
-        mixer.init()
-        pygame.mixer.music.load("music/nostalgia.mp3")
+    """def _music(self):
+        The background music.
+        pygame.mixer.init(frequency=44100, size=-16, channels=2, buffer=512, devicename=None)
+        pygame.mixer.music.load("music/invitation.mp3")
         #song created by me.
         pygame.mixer.music.set_volume(8)
-        pygame.mixer.music.play(-1)
+        pygame.mixer.music.play(-1)"""
 
     def impact_noise(self):
         """Sound for when ships are damaged."""
